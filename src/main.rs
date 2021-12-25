@@ -66,7 +66,7 @@ fn main() {
         ),
         Friends::new(
             "joe",
-            "What are you doing here, leave now",
+            " What are you doing here, leave now",
             FriendAction::Refuse,
             48,
         ),
