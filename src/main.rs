@@ -12,8 +12,6 @@ fn get_name() -> String {
 }
 
 fn main() {
-    // Start the program greet and ask for name
-    println!("Hello, What's your name?");
 
     impl Friends {
         fn new ( name: &str, greeting: &str) -> Self {
@@ -27,41 +25,39 @@ fn main() {
         }
     }
 
-
+    #[derive(Debug)]
     struct Friends {
         name: String,
         greeting: String,
     }
 
-    let friends_names = [
+    let mut friends_names = vec![
         Friends::new("ardeshir", "Hello Ardeshir!"),
         Friends::new("anoush", "Hello Anoush!"),
         Friends::new("kayhan", "Hello Kayhan!"),
     ];
 
+
+    // Start the program greet and ask for name
+    loop {
+    println!("Hello, What's your name? (Leave empty and press Enter to leave)");
     let name = get_name();
-    
     let friends = friends_names
        .iter()
        .find(|friend| friend.name == name);
     
-    match friends {
-         Some(friend) => friend.greet_visitor(),
-         None => println!("You are not on the VIP list. Please subscribe to clue!")
-    }
-
-    /* let mut allowed = false;
-
-    for friend in &friends_names {
-        if friend == &name {
-        allowed = true;
-        }
-    }
-
-    if allowed {
-        println!("Welcome back {}!", name);
-    } else {
-        println!("Sorry {}, you're not allowed!", name);
-    } 
-    */
-}
+        match friends {
+          Some(friend) => friend.greet_visitor(),
+          None => {
+           if name.is_empty() {
+               break;
+            } else {
+             println!("You are not on the VIP list. Please subscribe to clue!");
+             friends_names.push(Friends::new(&name, "New Friend added!"));
+            }
+         }
+       } 
+   }
+   println!("The final list of friends:");
+   println!("{:#?}", friends_names);
+} // end of main 
