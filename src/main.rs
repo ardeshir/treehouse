@@ -50,6 +50,7 @@ fn main() {
 
     let mut friends_names = vec![
         Friends::new("ardeshir", " welcome back!", FriendAction::Accept, 51),
+        Friends::new("roxy", " Woof woof back!", FriendAction::Accept, 21),
         Friends::new(
             "anoush",
             " nice to see you again!",
