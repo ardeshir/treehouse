@@ -43,7 +43,7 @@ fn main() {
                 FriendAction::Refuse => println!("Sorry, {},{}", self.name, self.greeting),
             }
             if self.age < 21 {
-                println!("Not old enought to drink here!");
+                println!("Not old enought to drink here.");
             }
         }
     }
@@ -61,13 +61,13 @@ fn main() {
             "kayhan",
             " great to have to you back!",
             FriendAction::AcceptWithNote {
-                note: String::from("Vegitarian and needs yogurt and chips"),
+                note: String::from("Vegitarian and needs yogurt and chips!"),
             },
             12,
         ),
         Friends::new(
             "joe",
-            " What are you doing here, leave now",
+            " What are you doing here, please leave now!",
             FriendAction::Refuse,
             48,
         ),
