@@ -88,7 +88,7 @@ fn main() {
                     break;
                 // Ends the welcome loop and println all the names.
                 } else {
-                    println!("You are not on the VIP list. Please subscribe to our clue to enter!");
+                    println!("You are not on the VIP list. Please subscribe to our club to enter!");
                     friends_names.push(Friends::new(
                         &name,
                         "New Friend added!",
